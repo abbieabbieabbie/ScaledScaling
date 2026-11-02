@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(grounded.isGrounded());
         if(Input.GetMouseButtonDown(0) && (grounded.isGrounded()))
         {
             isDragging = true;

@@ -6,9 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     float speed = 5f;
 
-    public Vector2 boxSize;
-    public float castDistance;
-    public LayerMask groundLayer;
+    Rigidbody2D rb;
+    public Vector3 boxSize;
+    public float maxDistance;
+    public LayerMask layerMask;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
-
         if (isGrounded())
         {
             if (!Input.GetMouseButtonDown(0))
@@ -31,19 +31,18 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position-transform.up * maxDistance, boxSize);
+    }
     public bool isGrounded()
     {
-        if(Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, castDistance, groundLayer))
+        if(Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, maxDistance, layerMask))
         {
             return true;
         } else
         {
             return false;
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireCube(transform.position-transform.up * castDistance, boxSize);
     }
 }
