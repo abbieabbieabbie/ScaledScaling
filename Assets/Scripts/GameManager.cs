@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
 
     Camera cam;
     public PlayerTraj ball;
+    public Trajectory trajectory;
+
+    public PlayerMovement grounded;
     [SerializeField] float pushForce = 4f;
 
     bool isDragging = false;
@@ -27,25 +30,28 @@ public class GameManager : MonoBehaviour
     Vector2 direction;
     Vector2 force;
     float distance;
+    
     void Start()
     {
         cam = Camera.main;
-        ball.DeactiveRigidbody();
     }
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && (grounded.isGrounded()))
         {
             isDragging = true;
             OnDragStart();
+        } else if(Input.GetMouseButtonDown(0) || (Input.GetKeyDown(KeyCode.Space)))
+        {
+            ball.Cancel();
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && (grounded.isGrounded()))
         {
             isDragging = false;
             OnDragEnd();
         }
-        if (isDragging)
+        if (isDragging && (grounded.isGrounded()))
         {
             OnDrag();
         }
@@ -53,21 +59,34 @@ public class GameManager : MonoBehaviour
 
     void OnDragStart()
     {
-        ball.DeactiveRigidbody();
         startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        trajectory.Show();
     }
     void OnDrag()
     {
         endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
         distance = Vector2.Distance(startPoint,endPoint);
+        Debug.Log(distance);
+        if (distance > 2.4)
+        {
+            distance = 2.4f;
+        }
         direction = (startPoint - endPoint).normalized;
-        force = direction * direction * pushForce;
+        force = direction * distance * pushForce;
 
         Debug.DrawLine(startPoint,endPoint);
+        trajectory.UpdateDots(ball.pos, force);
     }
     void OnDragEnd()
     {
-        ball.ActiveRigidbody();
-        ball.Sling(force);
+        
+        if (grounded.isGrounded())
+        {
+            ball.ActiveRigidbody();
+            ball.Sling(force);
+
+            trajectory.Hide();
+        }
     }
 }

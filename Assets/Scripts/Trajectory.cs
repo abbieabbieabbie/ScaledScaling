@@ -33,6 +33,10 @@ public class Trajectory : MonoBehaviour
         for (int i = 0; i < dotsNumber; i++)
         {
             pos.x = (ballPos.x + forceApplied.x * timeStamp);
+            pos.y = (ballPos.y + forceApplied.y * timeStamp)-(Physics2D.gravity.magnitude*timeStamp*timeStamp) / 2f;
+
+            dotsList[i].position = pos;
+            timeStamp += dotsSpacing;
             // TO DO TOMORROW
         }
     }

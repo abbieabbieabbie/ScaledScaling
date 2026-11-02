@@ -29,4 +29,14 @@ public class PlayerTraj : MonoBehaviour
         rb.angularVelocity = 0f;
         rb.isKinematic = true;
     }
+    public void Cancel()
+    {
+        if (rb.velocity.y > -3)
+        {
+            rb.velocity = new Vector3(0,-3,0);
+        } else
+        {
+            rb.velocity = new Vector3(0,rb.velocity.y,0);
+        }
+    }
 }
