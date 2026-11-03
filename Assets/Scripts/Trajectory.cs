@@ -17,6 +17,7 @@ public class Trajectory : MonoBehaviour
     {
         Hide();
         PrepareDots();
+        DontDestroyOnLoad(gameObject);
     }
     void PrepareDots()
     {
