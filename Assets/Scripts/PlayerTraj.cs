@@ -7,6 +7,9 @@ public class PlayerTraj : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public BoxCollider2D col;
     [HideInInspector] public Vector3 pos { get { return transform.position; }}
+
+    public Sprite pangolinSprite;
+    public Sprite newSprite;
     // Start is called before the first frame update
     void Awake()
     {
@@ -17,6 +20,7 @@ public class PlayerTraj : MonoBehaviour
     public void Sling(Vector2 force)
     {
         rb.AddForce (force, ForceMode2D.Impulse);
+        this.GetComponent<SpriteRenderer>().sprite = newSprite;
     }
 
     public void ActiveRigidbody()
@@ -31,6 +35,7 @@ public class PlayerTraj : MonoBehaviour
     }
     public void Cancel()
     {
+        this.GetComponent<SpriteRenderer>().sprite = pangolinSprite;
         if (rb.velocity.y > -3)
         {
             rb.velocity = new Vector3(0,-3,0);
