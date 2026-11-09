@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: doors_28
+  m_Name: Big Spike_0
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -7894810604640916676, guid: 0dd7fcef12cabd14486c38705e0ed760, type: 3}
+  m_Sprite: {fileID: 4557659786292834780, guid: a26adda05c4f75e41a434c46827767e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
