@@ -161,6 +161,7 @@ MonoBehaviour:
     m_Bits: 64
   pangolinSprite: {fileID: -2596791480638835309, guid: 200833f0a775ff84c87520026e0d322a, type: 3}
   newSprite: {fileID: 5390890305513641538, guid: e4f45197ceff46e459ee40924047af50, type: 3}
+  movement: {x: 0, y: 0, z: 0}
 --- !u!50 &7161903194537133199
 Rigidbody2D:
   serializedVersion: 4
@@ -282,6 +283,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   killCollider: {fileID: 8447693618313401406}
+  startPos: {x: 0, y: 0, z: 0}
+  player: {fileID: 5275349264899570205}
 --- !u!1 &1232588210061117692
 GameObject:
   m_ObjectHideFlags: 0

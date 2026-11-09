@@ -610,17 +610,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1715501638 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5275349264899570205, guid: 28b073890a0b6154e84889fb6b8e4571, type: 3}
-  m_PrefabInstance: {fileID: 5059271037851237449}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5e9af819b023af4c9c16224e2477227, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1967974714
 GameObject:
   m_ObjectHideFlags: 0
@@ -6950,18 +6939,6 @@ PrefabInstance:
     - target: {fileID: 4332647060432743794, guid: 28b073890a0b6154e84889fb6b8e4571, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7071632652880360580, guid: 28b073890a0b6154e84889fb6b8e4571, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1715501638}
-    - target: {fileID: 7071632652880360580, guid: 28b073890a0b6154e84889fb6b8e4571, type: 3}
-      propertyPath: startPos.x
-      value: 6.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 7071632652880360580, guid: 28b073890a0b6154e84889fb6b8e4571, type: 3}
-      propertyPath: startPos.y
-      value: 0.43
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
