@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 boxSize;
     public float maxDistance;
     public LayerMask layerMask;
+    public Sprite pangolinSprite;
+    public Sprite newSprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,9 +41,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Physics2D.BoxCast(transform.position, boxSize, 0, -transform.up, maxDistance, layerMask))
         {
+            this.GetComponent<SpriteRenderer>().sprite = pangolinSprite;
             return true;
         } else
         {
+            this.GetComponent<SpriteRenderer>().sprite = newSprite;
             return false;
         }
     }

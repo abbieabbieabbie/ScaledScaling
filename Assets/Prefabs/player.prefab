@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 8447693618313401406}
   - component: {fileID: 5208773890760251067}
   - component: {fileID: 3950878301775749730}
+  - component: {fileID: 7071632652880360580}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -80,7 +81,7 @@ Transform:
   m_GameObject: {fileID: 359751680369114435}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.47, y: 0.43, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -130,7 +131,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -2596791480638835309, guid: 200833f0a775ff84c87520026e0d322a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -153,11 +154,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e9af819b023af4c9c16224e2477227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxSize: {x: 0.25, y: 0.02, z: 0}
-  maxDistance: 0.25
+  boxSize: {x: 0.56, y: 0.02, z: 0}
+  maxDistance: 0.48
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  pangolinSprite: {fileID: -2596791480638835309, guid: 200833f0a775ff84c87520026e0d322a, type: 3}
+  newSprite: {fileID: 5390890305513641538, guid: e4f45197ceff46e459ee40924047af50, type: 3}
 --- !u!50 &7161903194537133199
 Rigidbody2D:
   serializedVersion: 4
@@ -223,13 +226,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 5.0759997, y: 2.0881875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.88, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &5208773890760251067
 MonoBehaviour:
@@ -245,6 +248,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   col: {fileID: 0}
+  pangolinSprite: {fileID: -2596791480638835309, guid: 200833f0a775ff84c87520026e0d322a, type: 3}
+  newSprite: {fileID: 5390890305513641538, guid: e4f45197ceff46e459ee40924047af50, type: 3}
 --- !u!114 &3950878301775749730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +266,22 @@ MonoBehaviour:
   trajectory: {fileID: 4327068550751453263}
   grounded: {fileID: 5275349264899570205}
   pushForce: 4
+--- !u!114 &7071632652880360580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359751680369114435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f204b0aa7e385db479b79ab077c2cd61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layersToCheck:
+    serializedVersion: 2
+    m_Bits: 128
+  killCollider: {fileID: 8447693618313401406}
 --- !u!1 &1232588210061117692
 GameObject:
   m_ObjectHideFlags: 0
