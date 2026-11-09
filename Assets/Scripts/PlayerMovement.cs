@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask layerMask;
     public Sprite pangolinSprite;
     public Sprite newSprite;
+    [HideInInspector] public Vector3 movement;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!Input.GetMouseButtonDown(0))
             {
-                Vector3 movement = new Vector3(x, 0, 0);
+                movement = new Vector3(x, 0, 0);
                 transform.Translate(movement * speed * Time.deltaTime);
             }
         }

@@ -7,6 +7,8 @@ public class KillPlayer : MonoBehaviour
     // Start is called before the first frame update
     public LayerMask layersToCheck;
     public Collider2D killCollider;
+    public Vector3 startPos;
+    public PlayerMovement player;
     void Update()
     {
         DetectTouch();
@@ -16,7 +18,8 @@ public class KillPlayer : MonoBehaviour
         if (killCollider.IsTouchingLayers(layersToCheck))
         {
             Debug.Log("game over!");
-            transform.position = new Vector3(0,0,0);
+            player.movement = Vector3.zero;
+            transform.position = startPos;
         }
     }
 }
