@@ -196,7 +196,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.3063063, y: 0.5705706, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -216,7 +216,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 4294967295
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -227,8 +227,8 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: b521a3a98f9856d4e9ac743581616596, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 1110082074, guid: 0dd7fcef12cabd14486c38705e0ed760, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
@@ -7063,11 +7063,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4332647060432743794, guid: 28b073890a0b6154e84889fb6b8e4571, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.47
+      value: -1.91
       objectReference: {fileID: 0}
     - target: {fileID: 4332647060432743794, guid: 28b073890a0b6154e84889fb6b8e4571, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.43
+      value: -2.46
       objectReference: {fileID: 0}
     - target: {fileID: 4332647060432743794, guid: 28b073890a0b6154e84889fb6b8e4571, type: 3}
       propertyPath: m_LocalPosition.z
