@@ -49,6 +49,7 @@ MonoBehaviour:
   dotsParent: {fileID: 1232588210061117692}
   dotsPrefab: {fileID: 1193566866135085135, guid: b611e5271f861e34280e8a9f5257c6db, type: 3}
   dotsSpacing: 0.03
+  player: {fileID: 0}
 --- !u!1 &359751680369114435
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +82,7 @@ Transform:
   m_GameObject: {fileID: 359751680369114435}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.47, y: 0.43, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -162,6 +163,7 @@ MonoBehaviour:
   pangolinSprite: {fileID: -2596791480638835309, guid: 200833f0a775ff84c87520026e0d322a, type: 3}
   newSprite: {fileID: 5390890305513641538, guid: e4f45197ceff46e459ee40924047af50, type: 3}
   movement: {x: 0, y: 0, z: 0}
+  gameManager: {fileID: 0}
 --- !u!50 &7161903194537133199
 Rigidbody2D:
   serializedVersion: 4
@@ -267,6 +269,7 @@ MonoBehaviour:
   trajectory: {fileID: 4327068550751453263}
   grounded: {fileID: 5275349264899570205}
   pushForce: 4
+  isDragging: 0
 --- !u!114 &7071632652880360580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,9 +285,15 @@ MonoBehaviour:
   layersToCheck:
     serializedVersion: 2
     m_Bits: 128
+  winLayersToCheck:
+    serializedVersion: 2
+    m_Bits: 0
   killCollider: {fileID: 8447693618313401406}
   startPos: {x: 0, y: 0, z: 0}
   player: {fileID: 5275349264899570205}
+  goldenBug: {fileID: 7543631223410897852, guid: f266d7388b44be041bad0764af7b6d2f, type: 3}
+  winGUI: {fileID: 5952021290768786578, guid: b8a7b00cb9ecf9a42bcf70384d4cd7c0, type: 3}
+  won: 0
 --- !u!1 &1232588210061117692
 GameObject:
   m_ObjectHideFlags: 0

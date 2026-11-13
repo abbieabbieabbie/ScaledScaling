@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public PlayerMovement grounded;
     [SerializeField] float pushForce = 4f;
 
-    bool isDragging = false;
+    public bool isDragging = false;
 
     Vector2 startPoint;
     Vector2 endPoint;
@@ -38,7 +38,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(grounded.isGrounded());
         if(Input.GetMouseButtonDown(0) && (grounded.isGrounded()))
         {
             isDragging = true;
@@ -68,7 +67,6 @@ public class GameManager : MonoBehaviour
     {
         endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
         distance = Vector2.Distance(startPoint,endPoint);
-        Debug.Log(distance);
         if (distance > 2.4)
         {
             distance = 2.4f;
@@ -78,6 +76,10 @@ public class GameManager : MonoBehaviour
 
         Debug.DrawLine(startPoint,endPoint);
         trajectory.UpdateDots(ball.pos, force);
+        if (Input.GetMouseButtonUp(0))
+        {
+            trajectory.Hide();
+        }
     }
     void OnDragEnd()
     {

@@ -8,7 +8,7 @@ public class Trajectory : MonoBehaviour
     [SerializeField] GameObject dotsParent;
     [SerializeField] GameObject dotsPrefab;
     [SerializeField] float dotsSpacing;
-
+    public PlayerMovement player;
     Vector2 pos;
     float timeStamp;
     Transform[] dotsList;
@@ -37,7 +37,7 @@ public class Trajectory : MonoBehaviour
 
             dotsList[i].position = pos;
             timeStamp += dotsSpacing;
-            // TO DO TOMORROW
+            
         }
     }
     public void Show()

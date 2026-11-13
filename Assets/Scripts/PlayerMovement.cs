@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public Sprite pangolinSprite;
     public Sprite newSprite;
     [HideInInspector] public Vector3 movement;
+    public GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +26,20 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         if (isGrounded())
         {
-            if (!Input.GetMouseButtonDown(0))
+            if (!gameManager.isDragging)
             {
                 movement = new Vector3(x, 0, 0);
                 transform.Translate(movement * speed * Time.deltaTime);
             }
+            else
+            {
+                movement = new Vector3(0, 0, 0);
+            }
+        } else
+        {
+            transform.Translate(movement * speed * Time.deltaTime);
         }
+
         
     }
 
