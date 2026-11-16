@@ -13,7 +13,10 @@ public class KillPlayer : MonoBehaviour
     public GoldenBug goldenBug;
     public GameObject winGUI;
     [HideInInspector] public bool won;
-
+    void Start()
+    {
+        StartCoroutine(ResetPos(0f));
+    }
     void Update()
     {
         DetectTouch();
@@ -26,7 +29,7 @@ public class KillPlayer : MonoBehaviour
         }
         if (killCollider.IsTouchingLayers(winLayersToCheck))
         {
-            if (!won)
+            if (!won && goldenBug.hasTriggered)
             {
                 Debug.Log("you win!");
                 player.movement = Vector3.zero;
@@ -40,11 +43,11 @@ public class KillPlayer : MonoBehaviour
         Debug.Log("game over!");
         player.movement = Vector3.zero;
         transform.position = startPos;
-        StartCoroutine(ResetPos());
+        StartCoroutine(ResetPos(0.1f));
     }
-    IEnumerator ResetPos()
+    IEnumerator ResetPos(float timer)
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(timer);
         winGUI.SetActive(false);
         goldenBug.Respawn();
         won = false;
